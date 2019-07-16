@@ -4,6 +4,9 @@ import Index from '../pages/index'
 import Home from '../pages/home'
 import Classific from '../pages/classific'
 import Shopping from '../pages/shopping'
+import Denglu from '../pages/denglu'
+import Denglutwo from '../pages/denglutwo'
+import Register from '../pages/register'
 
 
 
@@ -30,6 +33,21 @@ export default new Router({
       path: '/shopping',
       name: 'Shopping',
       component: Shopping
+    },
+    {
+      path: '/denglu',
+      name: '/Denglu',
+      component: Denglu
+    },
+    {
+      path: '/denglutwo',
+      name: '/Denglutwo',
+      component: Denglutwo
+    },
+    {
+      path: '/register',
+      name: '/Register',
+      component: Register
     },
     {path:'/*',redirect:"/index"},
 
