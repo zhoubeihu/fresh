@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '../pages/index'
 import Home from '../pages/home'
 import Classific from '../pages/classific'
+import Shopping from '../pages/shopping'
 
 
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/classific',
       name: 'Classific',
       component: Classific
+    },
+    {
+      path: '/shopping',
+      name: 'Shopping',
+      component: Shopping
     },
     {path:'/*',redirect:"/index"},
 
