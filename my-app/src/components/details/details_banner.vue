@@ -2,8 +2,8 @@
     <div>
         <div class="swiper-container">
 	<div class="swiper-wrapper">
-		<div v-for='el in arrItem' class="swiper-slide">
-			<img class="img" :src="el.imgUrl">
+		<div v-for='(v,i) in shopInfo.images' :key="i" class="swiper-slide">
+			<img class="img" :src="v">
 		</div>
 	</div>
 	<!-- 如果需要分页器 -->
@@ -16,6 +16,7 @@
 import Swiper from 'swiper' 
 import 'swiper/dist/css/swiper.css'
 export default {
+        props:['data'], //接受父组件传过来的数据
         mounted:function(){
         new Swiper('.swiper-container', {
             loop: true, // 循环模式选项
@@ -27,28 +28,12 @@ export default {
     },
     data(){
         return {
-                arrItem:[
-                        {
-                                name:'swiperSlide5',
-                                imgUrl:'http://pic.58pic.com/58pic/13/60/16/64b58PICXEK_1024.jpg'
-                        },
-                        {
-                                name:'swiperSlide1',
-                                imgUrl:'http://image.qmango.com/hotelimg/dl1210/109490/109.jpeg'
-                        },
-                        {
-                                name:'swiperSlide51',
-                                imgUrl:'http://image.qmango.com/hotelimg/dl1210/125708/181.jpeg'
-                        },
-                        {
-                                name:'swiperSlide1111115',
-                                imgUrl:'http://image.qmango.com/hotelimg/dl1210/119297/793.jpeg'
-                        }
-                ]
+            shopInfo:this.data
         }
     },
 }
 </script>
+
 <style scoped>
  .img{
      width:100%;

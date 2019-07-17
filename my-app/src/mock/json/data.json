@@ -1,14 +1,14 @@
 {
     "details_title":"凡谷归真凡谷1号番茄",
-    "scale":"500",
+    "scale":"500g",
     "price":"9.9",
     "company":"份",
     "images":[
-        "1.jpg",
-        "2.jpg",
-        "3.jpg",
-        "4.jpg",
-        "5.jpg"
+        "../../../static/img/01.jpg",
+        "../../../static/img/02.jpg",
+        "../../../static/img/03.jpg",
+        "../../../static/img/4.jpg",
+        "../../../static/img/5.jpg"
     ],
     "content":"适合生吃的番茄，1360小时的自然生长，自然成熟，富含维生素，热量低，吃的放心。",
     "comment":[
@@ -29,9 +29,12 @@
     "place":"云南省楚雄彝族自治州",
     "Storage":"冷藏",
     "details_images":[
-        "1.jpg",
-        "2.jpg",
-        "3.jpg"
-    ]
+        "../../../static/img/img1.jpg",
+        "../../../static/img/img2.jpg",
+        "../../../static/img/img3.jpg",
+        "../../../static/img/img4.jpg"
+
+    ],
+    "number":55
 
 }

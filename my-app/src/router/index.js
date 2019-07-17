@@ -5,7 +5,10 @@ import Home from '../pages/home'
 import Classific from '../pages/classific'
 import Shopping from '../pages/shopping'
 import Details from '../pages/details'
+import DetailsComment from '../components/details/details_comment'
 Vue.use(Router)
+
+ 
 
 export default new Router({
   routes: [
@@ -34,8 +37,13 @@ export default new Router({
       name:'Details',
       component:Details
     },
+    {
+      path: '/details_comment',
+      name: 'DetailsComment',
+      component: DetailsComment
+    },
     {path:'/*',redirect:"/index"},
 
 
-  ]
+  ],
 })
