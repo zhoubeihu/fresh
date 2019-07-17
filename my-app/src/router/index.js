@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages/index'
-import Home from '../pages/home'
-import Classific from '../pages/classific'
-import Shopping from '../pages/shopping'
+import Mine from '../pages/mine'
+import Carshop from '../pages/carshop'
+import Fenlei from '../pages/fenlei'
+import Hequlife from '../pages/Hequlife'
 
 
 
@@ -12,24 +13,29 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/hequlife',
+      name: 'Hequlife',
+      component: Hequlife
+    },
+    {
       path: '/index',
       name: 'Index',
       component: Index
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/mine',
+      name: 'Mine',
+      component: Mine
     },
     {
-      path: '/classific',
-      name: 'Classific',
-      component: Classific
+      path: '/carshop',
+      name: 'Carshop',
+      component: Carshop
     },
     {
-      path: '/shopping',
-      name: 'Shopping',
-      component: Shopping
+      path: '/fenlei',
+      name: 'Fenlei',
+      component: Fenlei
     },
     {path:'/*',redirect:"/index"},
 

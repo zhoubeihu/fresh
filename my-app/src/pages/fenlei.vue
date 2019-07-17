@@ -1,8 +1,8 @@
 <template>
     <div>
-          <Top></Top>
-         <Fuvs></Fuvs>
-         首页
+        <Top></Top>
+        <Fuvs></Fuvs>
+        分类
     </div>
 </template>
 <script>
@@ -13,10 +13,5 @@ export default {
 }
 </script>
 <style scoped>
-/* p{
-    width: 7.5rem;
-    height: 0.5rem;
-    background: red;
-    font-size: 12px;
-} */
+
 </style>
