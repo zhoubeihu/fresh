@@ -1,9 +1,10 @@
 <template>
     <div>
        <Denglutop></Denglutop>
+       
         <div class="wfd">
             <div class="wfe"><img src="../../static/img/logo.png"></div>
-            <div class="wff"><div class="wfh">支付宝</div><div class="wfi">快捷登录</div></div>
+             <router-link to="/register"><div class="wff">快捷注册</div></router-link>
             <router-link to="/denglutwo"><div class="wfg">账号/密码登录</div></router-link>
         </div>
         <div class="wfj">
@@ -39,6 +40,11 @@ img{
     background-color:rgb(0, 119, 255);
     margin: 0 auto;
     border-radius: 0.1rem;
+    font-size: 0.3rem;
+    color: #fff;
+    line-height: 1rem;
+    text-align: center;
+
 
 }
 .wfg{
@@ -51,24 +57,15 @@ img{
     border: 1px solid #ccc;
     line-height: 1rem;
 }
-.wfh{
-    float: left;
-    font-size: 0.5rem;
-    color: #fff;
-    line-height: 1rem;
-    margin-left: 2rem;
-}
-.wfi{
-    float: left;
-    font-size: 0.3rem;
-    color: #fff;
-    line-height: 1rem;
-}
+
+
+
 .wfj{
     position: fixed;
     bottom:0px;
     font-size: 0.2rem;
     color: #ccc;
+    
 }
 .wfk{
     color: rgb(0, 119, 255);

@@ -3,21 +3,21 @@
         <Denglutop></Denglutop>
         <div>
             <div class="wfaa">
-                <span class="wfbb">账户</span><input type="text" placeholder="请输入账户名" class="wfinput" v-model="inputa">
+                <span class="wfbb">账户</span><input type="text" placeholder="请输入账户名" class="wfinput" v-model="username">
             </div>
             <div class="wfaa">
-                <span class="wfbb">登录密码</span><input type="text" placeholder="请输入密码" class="wfinput" v-model="inputb">
+                <span class="wfbb">登录密码</span><input type="text" placeholder="请输入密码" class="wfinput" v-model="userpwd">
             </div>
         </div>
         <div class="wfdd">
         <button :class="btnbool ? 'wfcc' : 'wfcc wfcc2'" :disabled="btnbool">登录</button>
         </div>
-        <div class="wfee">
+        <!-- <div class="wfee">
             <div class="wfff">短信验证码登录</div>
             <div class="wfgg">忘记密码</div>
-        </div>
+        </div> -->
         <div class="wfhh">
-            <router-link to='/register'><div class="wfii">免费注册</div></router-link>
+            <router-link to='/register'><div class="wfii" >免费注册</div></router-link>
         </div>
     </div>
 </template>
@@ -30,20 +30,21 @@ export default {
     data() {
         return {
             btnbool:true,
-            inputa:'',
-            inputb:''
+            username:'',
+            userpwd:'',
+            
         }
     },
     watch:{
-           inputa(){
-               if(this.inputa!=""&&this.inputb!=""){
+           username(){
+               if(this.username!=""&&this.userpwd!=""){
                    this.btnbool=false
                }else{
                 this.btnbool=true
                }
            },
-           inputb(){
-            if(this.inputa!=""&&this.inputb!=""){
+           userpwd(){
+            if(this.username!=""&&this.userpwd!=""){
                    this.btnbool=false
                }else{
                 this.btnbool=true

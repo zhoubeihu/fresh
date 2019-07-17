@@ -6,14 +6,23 @@
         </div>
         <div>
             <div class="wfaa">
-                <span class="wfbb">邮箱</span><input type="text" placeholder="请输入账户名" class="wfinput" v-model="inputa">
+                <span class="wfbb">账户</span>
+                <input type="text" placeholder="请输入账户名" class="wfinput" v-model="username">
             </div>
             <div class="wfaa">
-                <input type="text" placeholder="请输入密码" class="wfinput" v-model="inputb"><span class="wfmm">获取验证码</span>
+                <span class="wfbb">密码</span>
+                <input type="text" placeholder="请输入密码" class="wfinput" v-model="userpwd">
+            </div>
+            <div class="wfaa">
+                <span class="wfbb">邮箱</span>
+                <input type="text" placeholder="请输入邮箱地址" class="wfinput" v-model="useremail" @mouseleave="fun2()">
+            </div>
+            <div class="wfaa">
+                <input type="text" placeholder="请输入验证码" class="wfinput" v-model="verify"><span class="wfmm" @click="fun1()">获取验证码</span>
             </div>
         </div>
         <div class="wfdd">
-        <button class="wfcc" >注册</button>
+        <button  @click="adduser()" :disabled="btnbooll" :class="btnbooll ? 'wfcc' : 'wfcc wfcc2'">注册</button>
         </div>
        
     </div>
@@ -22,30 +31,97 @@
 export default {
     data() {
         return {
-            btnbool:true,
-            inputa:'',
-            inputb:''
+            btnbooll:true,
+            username:'',
+            userpwd:'',
+            useremail:'',
+            verify:'', //用户输入验证码
+            emailyz:'', //邮箱验证码
+            emailyzz:""
+
+
         }
     },
      methods: {
         fun(){
             this.$router.go(-1);
-        }
-    }, 
+        },
+    // 邮箱验证码请求
+        fun1(){
+             axios({
+                url:"http://localhost:3000/get",//get发送数据方式
+                method:"get",
+                params:{useremail:this.useremail} //get发送数据方式
+            }).then((ok)=>{
+                this.emailyz = ok
+                console.log(ok)
+            })
+
+        },
+    fun2(){
+        var emaila=/^\d{3,}@\w{2,}\.(com|cn|net|com.cn)$/;
+        if(emaila.test(this.useremail)==true){
+            this.emailyzz="1";
+
+        }else{
+           this.useremail="邮箱格式错误";
+           this.emailyzz="0";
     
+        }
+    },
+        // 用户注册
+        adduser(){
+            if(this.emailyz == this.verify){
+                var param=new URLSearchParams();
+                param.append({"username":this.username,"userpwd":this.userpwd,"useremail":this.useremail});
+                    axios({
+                    url:"http://localhost:3000/post",
+                    method:"post",
+                    // post发送数据的时候使用data属性
+                    data:param
+                }).then((ok)=>{
+                    console.log(ok);
+                    alert("注册成功，请登录！");
+                    this.$router.push("/denglutwo");
+                })
+
+            }else{
+                alert("验证码不正确！")
+
+            }
+           
+        }
+
+    }, 
+    // 监听按钮
     watch:{
-           inputa(){
-               if(this.inputa!=""&&this.inputb!=""){
-                   this.btnbool=false
+           username(){
+               if(this.username!=""&&this.userpwd!=""&&this.useremail!=""&&this.verify!=""&&this.emailyzz=="1"){
+                   this.btnbooll=false
                }else{
-                this.btnbool=true
+                this.btnbooll=true
                }
            },
-           inputb(){
-            if(this.inputa!=""&&this.inputb!=""){
-                   this.btnbool=false
+
+           userpwd(){
+            if(this.username!=""&&this.userpwd!=""&&this.useremail!=""&&this.verify!=""&&this.emailyzz=="1"){
+                   this.btnbooll=false
                }else{
-                this.btnbool=true
+                this.btnbooll=true
+               }
+           },
+           useremail(){
+            if(this.username!=""&&this.userpwd!=""&&this.useremail!=""&&this.verify!=""&&this.emailyzz=="1"){
+                   this.btnbooll=false
+               }else{
+                this.btnbooll=true
+               }
+           }, 
+           verify(){
+            if(this.username!=""&&this.userpwd!=""&&this.useremail!=""&&this.verify!=""&&this.emailyzz=="1"){
+                   this.btnbooll=false
+               }else{
+                this.btnbooll=true
                }
            }, 
         }
@@ -101,12 +177,16 @@ export default {
     height: 1rem;
     line-height: 1rem;
     border-radius: 0.1rem;
-    border: none;   
+    border: none; 
+    margin-left: 0.2rem;  
+}
+.wfcc2{
+    background-color: rgb(255, 0, 0)
 }
 .wfmm{
     font-size: 0.4rem;
     display: inline-block;
-    width: 1rem;
+    width: 29%;
     color:rgb(53, 51, 51);
 }
 
