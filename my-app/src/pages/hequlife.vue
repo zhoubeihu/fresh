@@ -1,7 +1,9 @@
 <template>
-    <div>  
-          <Top></Top>
-         <Fuvs></Fuvs>
+    <div>
+                  <Top></Top>
+
+            <Fuvs></Fuvs>
+            
     </div>
 </template>
 <script>
@@ -18,4 +20,5 @@ p{
     background: red;
     font-size: 12px;
 }
+
 </style>

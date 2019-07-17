@@ -48,7 +48,7 @@ export default {
         },
     // 邮箱验证码请求
         fun1(){
-             axios({
+             this.axios({
                 url:"http://localhost:3000/get",//get发送数据方式
                 method:"get",
                 params:{useremail:this.useremail} //get发送数据方式
@@ -74,7 +74,7 @@ export default {
             if(this.emailyz == this.verify){
                 var param=new URLSearchParams();
                 param.append({"username":this.username,"userpwd":this.userpwd,"useremail":this.useremail});
-                    axios({
+                    this.axios({
                     url:"http://localhost:3000/post",
                     method:"post",
                     // post发送数据的时候使用data属性

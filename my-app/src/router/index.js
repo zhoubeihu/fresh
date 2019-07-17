@@ -7,6 +7,10 @@ import Shopping from '../pages/shopping'
 import Denglu from '../pages/denglu'
 import Denglutwo from '../pages/denglutwo'
 import Register from '../pages/register'
+import Mine from '../pages/mine'
+import Carshop from '../pages/carshop'
+import Fenlei from '../pages/fenlei'
+import Hequlife from '../pages/Hequlife'
 
 
 
@@ -15,24 +19,29 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/hequlife',
+      name: 'Hequlife',
+      component: Hequlife
+    },
+    {
       path: '/index',
       name: 'Index',
       component: Index
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/mine',
+      name: 'Mine',
+      component: Mine
     },
     {
-      path: '/classific',
-      name: 'Classific',
-      component: Classific
+      path: '/carshop',
+      name: 'Carshop',
+      component: Carshop
     },
     {
-      path: '/shopping',
-      name: 'Shopping',
-      component: Shopping
+      path: '/fenlei',
+      name: 'Fenlei',
+      component: Fenlei
     },
     {
       path: '/denglu',
