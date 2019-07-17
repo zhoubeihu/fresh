@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages/index'
-import Home from '../pages/home'
-import Classific from '../pages/classific'
-import Shopping from '../pages/shopping'
 import Denglu from '../pages/denglu'
 import Denglutwo from '../pages/denglutwo'
 import Register from '../pages/register'
@@ -11,8 +8,6 @@ import Mine from '../pages/mine'
 import Carshop from '../pages/carshop'
 import Fenlei from '../pages/fenlei'
 import Hequlife from '../pages/Hequlife'
-
-
 
 Vue.use(Router)
 

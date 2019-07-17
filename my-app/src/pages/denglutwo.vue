@@ -17,7 +17,7 @@
             <div class="wfgg">忘记密码</div>
         </div> -->
         <div class="wfhh">
-            <router-link to='/register'><div class="wfii" >免费注册</div></router-link>
+            <router-link to='/register'><div class="wfii" @click="login()">免费注册</div></router-link>
         </div>
     </div>
 </template>
@@ -33,6 +33,28 @@ export default {
             username:'',
             userpwd:'',
             
+        }
+    },
+    methods: {
+        // 登录交互验证
+        login(){
+            var param=new URLSearchParams();
+                param.append({"username":this.username,"userpwd":this.userpwd});
+                    this.axios({
+                    url:"http://localhost:3000/post",
+                    method:"post",
+                    // post发送数据的时候使用data属性
+                    data:param
+                }).then((ok)=>{
+                    console.log(ok);
+                    if(ok == 1){
+                        alert("登录成功！");
+                        this.$router.push("/index");
+                    }else if(ok==0){
+                        alert("用户名或密码不正确，请重新登录！");
+                    }
+ 
+                })
         }
     },
     watch:{

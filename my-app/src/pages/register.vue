@@ -7,7 +7,7 @@
         <div>
             <div class="wfaa">
                 <span class="wfbb">账户</span>
-                <input type="text" placeholder="请输入账户名" class="wfinput" v-model="username">
+                <input type="text" placeholder="请输入账户名" class="wfinput" v-model="username" @mouseleave="nameyz()">
             </div>
             <div class="wfaa">
                 <span class="wfbb">密码</span>
@@ -45,6 +45,20 @@ export default {
      methods: {
         fun(){
             this.$router.go(-1);
+        },
+        // 用户名是否存在验证
+        nameyz(){
+               this.axios({
+                url:"http://localhost:3000/get",//get发送数据方式
+                method:"get",
+                params:{username:this.usernamel} //get发送数据方式
+            }).then((ok)=>{
+                
+                console.log(ok)
+                 if(ok==0){
+                        alert("用户名已存在！");
+                    }
+            })
         },
     // 邮箱验证码请求
         fun1(){
