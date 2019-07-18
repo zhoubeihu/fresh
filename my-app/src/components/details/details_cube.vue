@@ -21,9 +21,9 @@
       <div>
         <p>购买数量（{{shopInfo.company}}</p>
         <div class="button_number">
-          <button>-</button>
-          <span class="details_number">1</span>
-          <button>+</button>
+          <button @click="jian()">-</button>
+          <span  class="details_number">{{number}}</span>
+          <button @click="jia()">+</button>
         </div>
       </div>
     </div>
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       isShow: false,
-      shopInfo: this.data
+      shopInfo: this.data,
+      number:1
     };
   },
   methods: {
@@ -45,6 +46,12 @@ export default {
       e.stopPropagation();
       this.isShow = false;
       console.log(this.isShow);
+    },
+    jian(){
+      this.number=this.number>1?this.number-1:1
+    },
+    jia(){
+      this.number++
     }
   }
 };
