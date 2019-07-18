@@ -91,7 +91,7 @@
 <script>
 import Banner from "../components/details/details_banner";
 import DetailsNav from "../components/details/details_nav";
-import data from "../mock/json/data.json";
+import data from "../mock/json/ldata.json";
 import DetailsCube from "../components/details/details_cube";
 
 export default {

@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import data from "../../mock/json/data.json";
+import data from "../../mock/json/ldata.json";
 export default {
   data() {
     return {
