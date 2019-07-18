@@ -33,7 +33,7 @@
 <script>
 export default {
   name: "details_cube",
-  props: ["data"],
+  props: ["data",'getNum'],
   data() {
     return {
       isShow: false,
@@ -49,11 +49,14 @@ export default {
     },
     jian(){
       this.number=this.number>1?this.number-1:1
+      this.getNum(this.number)
     },
     jia(){
       this.number++
+      this.getNum(this.number)
     }
-  }
+  },
+ 
 };
 </script>
 
