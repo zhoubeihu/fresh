@@ -1,6 +1,6 @@
 <template>
     <div>
-        indexlist
+        shopping 
     </div>
 </template>
 <script>
