@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages/index'
 import Shopping from '../pages/shopping'
+import Hequxq from '../pages/hequxq'
+import Hqsh from '../pages/hqsh'
+import Shopping from '../pages/shopping'
 import Details from '../pages/details'
 import DetailsComment from '../components/details/details_comment'
 import Denglu from '../pages/denglu'
@@ -72,6 +75,21 @@ export default new Router({
       path: '/details_comment',
       name: 'DetailsComment',
       component: DetailsComment
+    },
+    {
+      path: '/shopping',
+      name: 'Shopping',
+      component: Shopping
+    },
+    {
+      path: '/hequxq',
+      name: 'Hequxq',
+      component: Hequxq
+    },
+    {
+      path: '/hqsh',
+      name: 'Hqsh',
+      component: Hqsh
     },
     {path:'/*',redirect:"/index"},
 
